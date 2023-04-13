@@ -1,0 +1,21 @@
+employer
+
+create accoutn -> employer-dashboard
+login -> empployer-dashboard
+
+
+on employer-dashboard
+-create a job button > this will redirect to new page where create job form will be visible
+- all listings  by you > this will show all the listings that you have posted till now. on clicking any of them ,  a dashboard will be open , and more information and applications for that job from the employees will be visible
+
+
+
+
+employee 
+signup - emplyee dashboard
+lgoi - employee dashboard
+
+on employee dashboard
+all the job postings in form of cards , that may want to apply , apply now button will take him to a different page where he can apply fro the job
+
+past applications - all the jobs he has appliied to int he past.
