@@ -12,6 +12,7 @@ router.delete("/delete-application/:applicationId" , isLoggedIn , employeeContro
 router.post("/login", employeeControllers.login);
 router.delete("/delete-account", isLoggedIn, employeeControllers.deleteAccount);
 router.get("/information", isLoggedIn, employeeControllers.details);
+router.get("/posting-information/:postingId", isLoggedIn, employeeControllers.postingInformation);
 
 // ALL POSTINGS BELOW
 router.get("/all-postings", isLoggedIn, employeeControllers.AllPostings);

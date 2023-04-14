@@ -188,6 +188,20 @@ exports.changePassword = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+exports.postingInformation = async (req, res) => {
+  try {
+    // Find user with the decoded ID
+    console.log("this is the postingId that i have got" , req.params.postingId);
+    const postings = await Postings.findById(req.params.postingId);
+    if (!postings) {
+      return res.status(404).json({ message: "postings not found" });
+    }
+
+    res.json(postings);
+  } catch (err) {
+    res.status(500).json({ message: "Server error" , message : err.message });
+  }
+};
 exports.AllPostings = async (req, res) => {
   try {
     // Find user with the decoded ID
@@ -246,12 +260,10 @@ exports.deleteApplication = async (req, res) => {
 
     res.json({ message: "application deleted successfully" });
   } catch (err) {
-    res
-      .status(500)
-      .json({
-        message: "Server error - in delete application",
-        message: err.message,
-      });
+    res.status(500).json({
+      message: "Server error - in delete application",
+      message: err.message,
+    });
   }
 };
 exports.deleteAccount = async (req, res) => {
